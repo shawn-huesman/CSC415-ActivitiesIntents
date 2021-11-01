@@ -10,6 +10,7 @@ import android.widget.EditText
 import android.widget.TextView
 
 val EXTRA_REPLY: String = "com.example.android.CSC415-ActivitiesIntents.extra.REPLY"
+private val LOG_TAG = SecondActivity::class.java.simpleName
 
 class SecondActivity : AppCompatActivity() {
     private lateinit var mReply: EditText
@@ -29,6 +30,7 @@ class SecondActivity : AppCompatActivity() {
         val replyIntent = Intent()
         replyIntent.putExtra(EXTRA_REPLY, mReply.text.toString())
         setResult(RESULT_OK, replyIntent)
+        Log.d(LOG_TAG, "End SecondActivity")
         finish()
     }
 
